@@ -2802,8 +2802,7 @@ impl State {
             }
         }
 
-        self.niri
-            .handle_focus_follows_mouse(&under);
+        self.niri.handle_focus_follows_mouse(&under);
 
         self.niri.pointer_contents.clone_from(&under);
 
@@ -5594,7 +5593,6 @@ mod tests {
         // because output_right_of(M1) returns Some(M2).
         assert_eq!(edge_overscroll_dir(dx, dy), Some(EdgeOverscrollDir::Right));
     }
-
 
     #[test]
     fn comp_mod_handling() {

@@ -3059,9 +3059,7 @@ impl<W: LayoutElement> ScrollingSpace<W> {
 
                 // Prefer hits within the activation region so CSD shadows can't steal
                 // hits from adjacent tiles (e.g. peeking columns in strut zones).
-                if let Some(rv) =
-                    HitType::hit_tile_within_activation_region(tile, tile_pos, pos)
-                {
+                if let Some(rv) = HitType::hit_tile_within_activation_region(tile, tile_pos, pos) {
                     return Some(rv);
                 }
             }
@@ -4103,8 +4101,7 @@ impl<W: LayoutElement> Column<W> {
         // layer-zone-aware area handed down from the workspace, so it moves on a
         // bar toggle too. Output resolution or scale changes still snap, since
         // animating those looks wrong.
-        let area_changed =
-            self.working_area != working_area || self.parent_area != parent_area;
+        let area_changed = self.working_area != working_area || self.parent_area != parent_area;
         let size_or_scale_changed = self.view_size != view_size || self.scale != scale;
 
         if self.view_size != view_size
